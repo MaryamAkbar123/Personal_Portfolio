@@ -213,7 +213,7 @@ section .title::after{
 .image img {
     width: 100%;
     max-width: 300px;
-    height: auto;
+    height: 450px;
     border-radius: 50%;
     box-shadow: 0 0 50px #640D6B;
     margin: 40px auto; /* Center image horizontally */
