@@ -27,9 +27,16 @@ html{
 }
 
 /* all similar content styling codes */
-section{
-    padding: 100px 0;
+
+section {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 0; /* Remove padding to align with full height */
+    box-sizing: border-box;
 }
+
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
