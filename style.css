@@ -26,7 +26,7 @@ html{
     background: #555;
 }
 
-/* all similar content styling codes */
+
 section{
     padding: 100px 0;
 }
@@ -35,7 +35,11 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .teams, .contact, footer{
+.about, .services, .skills, .teams, .contact{
+    font-family: 'Poppins', sans-serif;
+}
+footer
+{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
@@ -80,9 +84,12 @@ section .title::after{
 /* navbar styling */
 .navbar{
     position: fixed;
+    background: #b10fbd;
+    height: 70px;
     width: 100%;
     z-index: 999;
-    padding: 30px 0;
+    padding: 20px 0;
+    border-radius: 20px;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
 }
@@ -131,6 +138,44 @@ section .title::after{
     color: #111;
     text-shadow: 0 0 50px #111;
 }
+/* Default Light Mode */
+body {
+    background-color: white;
+    color: black;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode nav {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode section {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+button#theme-toggle {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    background: #640D6B;
+    border:1px solid white;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button#theme-toggle:hover {
+    background: #640D6B;
+}
+
 
 /* menu btn styling */
 .menu-btn{
@@ -188,16 +233,16 @@ section .title::after{
   margin-right: 0;
 }
 .home .home-content .text-1{
-    font-size: 27px;
+    font-size: 35px;
     margin-top: 100px;
 }
 .home .home-content .text-2{
-    font-size: 55px;
+    font-size: 65px;
     font-weight: 600;
     margin-left: -3px;
 }
 .home .home-content .text-3{
-    font-size: 25px;
+    font-size: 35px;
     margin: 5px 0;
     text-shadow: 0 0 50px  #640D6B;
 }

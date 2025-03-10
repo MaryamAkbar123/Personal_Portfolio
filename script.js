@@ -99,3 +99,24 @@ $("a[href='Maryam_Akbar_Resume.pdf']").click(function(e) {
         window.location.href = mailToLink;
     });
 });
+// Smooth Scrolling for Navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(event) {
+        event.preventDefault();
+        let target = document.querySelector(this.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+// Light/Dark Mode Toggle
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+toggleBtn.addEventListener("click", function() {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+        toggleBtn.innerText = "Light Mode";
+    } else {
+        toggleBtn.innerText = "Dark Mode";
+    }
+});
