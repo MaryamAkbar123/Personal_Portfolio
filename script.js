@@ -1,93 +1,167 @@
-$(document).ready(function(){
-    $(window).scroll(function(){
-        // sticky navbar on scroll script
-        if(this.scrollY > 20){
-            $('.navbar').addClass("sticky");
-        }else{
-            $('.navbar').removeClass("sticky"); 
-        }
+// $(document).ready(function(){
+//     $(window).scroll(function(){
         
-        // scroll-up button show/hide script
-        if(this.scrollY > 500){
-            $('.scroll-up-btn').addClass("show");
-        }else{
-            $('.scroll-up-btn').removeClass("show");
+//         if(this.scrollY > 20){
+//             $('.navbar').addClass("sticky");
+//         }else{
+//             $('.navbar').removeClass("sticky"); 
+//         }
+       
+//         if(this.scrollY > 500){
+//             $('.scroll-up-btn').addClass("show");
+//         }else{
+//             $('.scroll-up-btn').removeClass("show");
+//         }
+//     });
+
+ 
+//     $('.scroll-up-btn').click(function(){
+//         $('html').animate({scrollTop: 0});
+//         $('html').css("scrollBehavior", "auto");
+//     });
+
+//     $('.navbar .menu li a').click(function(){
+//         $('html').css("scrollBehavior", "smooth");
+//     });
+
+    
+//     $('.menu-btn').click(function(){
+//         $('.navbar .menu').toggleClass("active");
+//         $('.menu-btn i').toggleClass("active");
+//     });
+
+//     var typed = new Typed(".typing", {
+//         strings: ["Frontend Developer", "Programmer", "Designer"],
+//         typeSpeed: 100,
+//         backSpeed: 60,
+//         loop: true
+//     });
+
+//     var typed = new Typed(".typing-2", {
+//         strings: ["Frontend Developer", "Programmer", "Designer"],
+//         typeSpeed: 100,
+//         backSpeed: 60,
+//         loop: true
+//     });
+
+// $("a[href='Maryam_Akbar_Resume.pdf']").click(function(e) {
+//     e.preventDefault(); 
+    
+//     const link = document.createElement('a');
+//     link.href = "Maryam_Akbar_Resume.pdf";
+//     link.download = "Maryam_Akbar_Resume.pdf"; 
+//     link.click();
+// });
+    
+//     $(".home-content a").click(function(e) {
+//         e.preventDefault();
+//         window.location.href = "mailto:maryamakbarcu@gmail.com?subject=Hiring Inquiry&body=Hello Maryam,\nWe would like to discuss an opportunity to hire you. Please share your availability for a conversation.";
+//     });
+
+//     $(".contact form").submit(function(e) {
+//         e.preventDefault();
+//         const name = $(".contact .name input").val();
+//         const email = $(".contact .email input").val();
+//         const subject = $(".contact .field input").val();
+//         const message = $(".contact .textarea textarea").val();
+
+//         const mailToLink = `mailto:maryamakbarcu@gmail.com?subject=${encodeURIComponent(subject)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+//         window.location.href = mailToLink;
+//     });
+// });
+
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener("click", function(event) {
+//         event.preventDefault();
+//         let target = document.querySelector(this.getAttribute("href"));
+//         target.scrollIntoView({ behavior: "smooth" });
+//     });
+// });
+
+// const toggleBtn = document.getElementById("theme-toggle");
+// const body = document.body;
+
+// toggleBtn.addEventListener("click", function() {
+//     body.classList.toggle("dark-mode");
+//     if (body.classList.contains("dark-mode")) {
+//         toggleBtn.innerText = "Light Mode";
+//     } else {
+//         toggleBtn.innerText = "Dark Mode";
+//     }
+// });
+
+
+
+
+$(document).ready(function() {
+    // Navbar sticky effect
+    $(window).scroll(function() {
+        // Sticky navbar
+        $('.navbar').toggleClass("sticky", this.scrollY > 20);
+        
+        // Scroll-up button show/hide
+        $('.scroll-up-btn').toggleClass("show", this.scrollY > 500);
+    });
+
+    // Scroll to top
+    $('.scroll-up-btn').click(function() {
+        $('html, body').animate({scrollTop: 0}, 'smooth');
+    });
+
+    // Smooth scrolling for anchor links
+    $('a[href^="#"]').click(function(e) {
+        e.preventDefault();
+        let target = $(this.getAttribute('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 70
+            }, 'smooth');
         }
     });
 
-    // slide-up script
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
-    });
-
-    $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
-    });
-
-    // toggle menu/navbar script
-    $('.menu-btn').click(function(){
+    // Mobile menu toggle
+    $('.menu-btn').click(function() {
         $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
+        $('.menu-btn i').toggleClass("fa-times");
     });
 
-    // typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["Frontend Developer", "Programmer", "Designer"],
+    // Close mobile menu when clicking a link
+    $('.navbar .menu li a').click(function() {
+        $('.navbar .menu').removeClass("active");
+        $('.menu-btn i').removeClass("fa-times");
+    });
+
+    // Typing animations
+    const typed = new Typed(".typing", {
+        strings: ["Frontend Developer", "Web Designer", "UI/UX Enthusiast"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    var typed = new Typed(".typing-2", {
-        strings: ["Frontend Developer", "Programmer", "Designer"],
+    const typed2 = new Typed(".typing-2", {
+        strings: ["Frontend Developer", "Web Designer", "UI/UX Enthusiast"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    // owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
-            }
-        }
+    // Resume download
+    $("a[href='Maryam_Akbar_Resume.pdf']").click(function(e) {
+        e.preventDefault(); 
+        const link = document.createElement('a');
+        link.href = "Maryam_Akbar_Resume.pdf";
+        link.download = "Maryam_Akbar_Resume.pdf"; 
+        link.click();
     });
-
-// Download CV functionality
-$("a[href='Maryam_Akbar_Resume.pdf']").click(function(e) {
-    e.preventDefault(); // Prevent the default action
     
-    const link = document.createElement('a');
-    link.href = "Maryam_Akbar_Resume.pdf"; // Adjust the path if needed
-    link.download = "Maryam_Akbar_Resume.pdf"; // Optional: Specify the downloaded file name
-    link.click(); // Programmatically click the link
-});
-    
-    // Hire me functionality
+    // Hire me button
     $(".home-content a").click(function(e) {
         e.preventDefault();
-        window.location.href = "mailto:maryamakbarcu@gmail.com?subject=Hiring Inquiry&body=Hello Maryam,\nWe would like to discuss an opportunity to hire you. Please share your availability for a conversation.";
+        window.location.href = "mailto:maryamakbarcu@gmail.com?subject=Hiring Inquiry&body=Hello Maryam,%0D%0A%0D%0AWe would like to discuss an opportunity to hire you. Please share your availability for a conversation.";
     });
 
-    // Send message functionality
+    // Contact form submission
     $(".contact form").submit(function(e) {
         e.preventDefault();
         const name = $(".contact .name input").val();
@@ -95,28 +169,27 @@ $("a[href='Maryam_Akbar_Resume.pdf']").click(function(e) {
         const subject = $(".contact .field input").val();
         const message = $(".contact .textarea textarea").val();
 
-        const mailToLink = `mailto:maryamakbarcu@gmail.com?subject=${encodeURIComponent(subject)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+        const mailToLink = `mailto:maryamakbarcu@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Portfolio')}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
         window.location.href = mailToLink;
     });
-});
-// Smooth Scrolling for Navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(event) {
-        event.preventDefault();
-        let target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({ behavior: "smooth" });
+
+    // Dark mode toggle
+    const toggleBtn = $("#theme-toggle");
+    const body = $("body");
+    
+    // Check for saved theme preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        body.addClass("dark-mode");
+        toggleBtn.text("Light Mode");
+    }
+
+    toggleBtn.click(function() {
+        body.toggleClass("dark-mode");
+        const isDarkMode = body.hasClass("dark-mode");
+        toggleBtn.text(isDarkMode ? "Light Mode" : "Dark Mode");
+        
+        // Save preference to localStorage
+        localStorage.setItem('darkMode', isDarkMode);
     });
 });
 
-// Light/Dark Mode Toggle
-const toggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
-
-toggleBtn.addEventListener("click", function() {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-        toggleBtn.innerText = "Light Mode";
-    } else {
-        toggleBtn.innerText = "Dark Mode";
-    }
-});

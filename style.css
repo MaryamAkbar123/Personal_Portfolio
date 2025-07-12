@@ -1,4 +1,3 @@
-/*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 *{
@@ -10,8 +9,6 @@
 html{
     scroll-behavior: smooth;
 }
-
-/* custom scroll bar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -80,8 +77,6 @@ section .title::after{
     background: #fff;
     transform: translateX(-50%);
 }
-
-/* navbar styling */
 .navbar{
     position: fixed;
     background: #b10fbd;
@@ -138,14 +133,11 @@ section .title::after{
     color: #111;
     text-shadow: 0 0 50px #111;
 }
-/* Default Light Mode */
 body {
     background-color: white;
     color: black;
     transition: background 0.5s, color 0.5s;
 }
-
-/* Dark Mode Styles */
 .dark-mode {
     background-color: #121212;
     color: #ffffff;
@@ -176,8 +168,6 @@ button#theme-toggle:hover {
     background: #640D6B;
 }
 
-
-/* menu btn styling */
 .menu-btn{
     color: #fff;
     font-size: 23px;
@@ -213,7 +203,7 @@ button#theme-toggle:hover {
 }
 
 
-/* home section styling */
+
 .home{
     display: flex;
    
@@ -252,8 +242,8 @@ button#theme-toggle:hover {
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 50px #640D6B;
-    margin: 40px auto; /* Center image horizontally */
-    display: block; /* For consistent centering */
+    margin: 40px auto; 
+    display: block;
 }
 .image img:hover {
    
@@ -283,7 +273,7 @@ button#theme-toggle:hover {
     box-shadow: 0 0 50px #54035a;
 }
 
-/* about section styling */
+
 .about .title::after{
     content: "who i am";
 }
@@ -328,7 +318,6 @@ button#theme-toggle:hover {
     background: none;
 }
 
-/* services section styling */
 .services{
     color:#fff;
     background: #111;
@@ -374,7 +363,7 @@ button#theme-toggle:hover {
     margin: 10px 0 7px 0;
 }
 
-/* skills section styling */
+
 
 .skills .title::after{
     content: "what i know";
@@ -453,7 +442,7 @@ button#theme-toggle:hover {
 }
 
 
-/* contact section styling */
+
 .contact .title::after{
     content: "get in touch";
 }
@@ -532,7 +521,7 @@ button#theme-toggle:hover {
 .right form .button-area button{
   color: #fff;
   display: block;
-  width: 160px!important;
+  width: 160px;
   height: 45px;
   outline: none;
   font-size: 18px;
@@ -548,7 +537,7 @@ button#theme-toggle:hover {
   color:  #640D6B;
   background: none;
 }
-/* footer section styling */
+
 footer{
     background: #111;
     padding: 15px 23px;
@@ -563,7 +552,7 @@ footer span a:hover{
     text-decoration: underline;
 }
 
-/* CSS for project section */
+
 .projects{
     color:#fff;
     background: #111;
@@ -622,7 +611,7 @@ footer span a:hover{
     color: #111;
 }
 
-/* responsive media query start */
+
 @media (max-width: 1104px) {
     .about .about-content .left img{
         height: 350px;
@@ -765,4 +754,146 @@ footer span a:hover{
         font-size: 23px;
         line-height: 38px;
     }
+}
+
+/* Projects Section */
+.projects {
+    color: #fff;
+    background: #111;
+    padding: 100px 0;
+}
+
+.projects .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.projects .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+.projects .title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: #640D6B;
+    padding: 0 5px;
+    background: #111;
+    transform: translateX(-50%);
+    content: "what i've built";
+    text-shadow: 0 0 50px #54035a;
+}
+
+.projects .projects-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.projects .projects-content .card {
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px;
+}
+
+.projects .projects-content .card:hover {
+    background: #640D6B;
+    box-shadow: 0 0 50px #54035a;
+    transform: translateY(-5px);
+}
+
+.projects .projects-content .card h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.projects .projects-content .card p {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.projects .projects-content .card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #640D6B;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #640D6B;
+}
+
+.projects .projects-content .card a:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+    .projects .projects-content .card {
+        width: calc(50% - 15px); /* 2 cards per row on tablets */
+    }
+}
+
+@media (min-width: 992px) {
+    .projects .projects-content .card {
+        width: calc(33.333% - 20px); /* 3 cards per row on desktops */
+    }
+}
+
+@media (max-width: 500px) {
+    .projects .title {
+        font-size: 32px;
+    }
+    
+    .projects .projects-content .card h3 {
+        font-size: 18px;
+    }
+    
+    .projects .projects-content .card p {
+        font-size: 14px;
+    }
+    
+    .projects .projects-content .card a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Dark mode adjustments */
+.dark-mode .projects {
+    background: #1e1e1e;
+}
+
+.dark-mode .projects .projects-content .card {
+    background: #2d2d2d;
+}
+
+.dark-mode .projects .projects-content .card:hover {
+    background: #640D6B;
 }
