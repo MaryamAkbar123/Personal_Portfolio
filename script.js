@@ -133,7 +133,7 @@ $(document).ready(function() {
 
     // Typing animations
     const typed = new Typed(".typing", {
-        strings: ["Frontend Developer", "Web Designer", "UI/UX Enthusiast"],
+        strings: ["Frontend Developer", "Web Developer", "MERN Stack Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
