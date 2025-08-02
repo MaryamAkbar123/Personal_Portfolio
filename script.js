@@ -140,7 +140,7 @@ $(document).ready(function() {
     });
 
     const typed2 = new Typed(".typing-2", {
-        strings: ["Frontend Developer", "Web Designer", "UI/UX Enthusiast"],
+        strings: ["Frontend Developer", "Web Developer", "MERN Stack Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
