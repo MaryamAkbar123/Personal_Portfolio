@@ -133,14 +133,14 @@ $(document).ready(function() {
 
     // Typing animations
     const typed = new Typed(".typing", {
-        strings: ["Frontend Developer", "Web Developer", "MERN Stack Developer"],
+        strings: ["Frontend Developer", "Web Developer", "MERN Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     const typed2 = new Typed(".typing-2", {
-        strings: ["Frontend Developer", "Web Developer", "MERN Stack Developer"],
+        strings: ["Frontend Developer", "Web Developer", "MERN Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
