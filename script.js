@@ -53,7 +53,7 @@ $(document).ready(function() {
         backSpeed: 60,
         loop: true
     });
-
+git 
     // Resume download
     $("a[href='Maryam_Akbar_Resume.pdf']").click(function(e) {
         e.preventDefault(); 
